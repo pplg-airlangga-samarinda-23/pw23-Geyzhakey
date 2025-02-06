@@ -19,18 +19,22 @@ $rows = $koneksi->execute_query($sql)->fetch_all(MYSQLI_ASSOC);
             text-align: center;
         }
         table {
-            margin-left: 450px;
+            margin-left: 410px;
 
         }
     </style>
 </head>
 <body>
-    <h1>Halaman list</h1>
+    <h1 style="text-align: center;">Halaman list</h1>
+    <a href="list-tambah.php">tambah data</a>
+
     <table border="1">
         <thead>
             <th>No</th>
             <th>Judul</th>
             <th>Genre</th>
+            <th>harga</th>
+            <th>Ukuran</th>
             <th>Rating</th>
             <th>Tanggal Rilis</th>
             <th>Aksi</th>
@@ -41,9 +45,11 @@ $rows = $koneksi->execute_query($sql)->fetch_all(MYSQLI_ASSOC);
             <tr>
                 <td><?= ++$no ?></td>
                 <td><?= $row["Judul"]?></td>
-                <td><?= $row["genre"]?></td>
-                <td><?= $row["harga"]?></td>
+                <td><?= $row["Genre"]?></td>
+                <td><?= $row["Harga"]?></td>
                 <td><?= $row["Ukuran"]?></td>
+                <td><?= $row["Rating"]?></td>
+                <td><?= $row["Tanggal_Rilis"]?></td>
                 <td>
                 <a href="list-edit.php?id=<?=$row['id']?>">Edit/</a>
                 <a href="list-hapus.php?id=<?=$row['id']?>">hapus</a>
